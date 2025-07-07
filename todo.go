@@ -2,7 +2,7 @@ package todo
 
 type TodoList struct {
 	Id          int    `json:"-"`
-	Title       string `json:"title" binding "required"`
+	Title       string `json:"title" binding:"required"`
 	Description string `json:"description"`
 }
 

@@ -26,13 +26,13 @@ func (h *Handler) signUp(c *gin.Context) {
 	})
 }
 
-type singIinInput struct {
+type singInInput struct {
 	Username string `json:"username" binding:"required"`
 	Password string `json:"password" binding:"required"`
 }
 
 func (h *Handler) signIn(c *gin.Context) {
-	var input singIinInput
+	var input singInInput
 
 	if err := c.BindJSON(&input); err != nil {
 		newErrorResponse(c, http.StatusBadRequest, err.Error())
