@@ -60,6 +60,7 @@ func (h *Handler) getListById(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		newErrorResponse(c, http.StatusBadRequest, "invalid id poram")
+		return
 	}
 
 	list, err := h.services.TodoList.GetById(userId, id)
