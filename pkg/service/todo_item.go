@@ -22,3 +22,7 @@ func (s *TodoItemServise) Create(userId, id int, item todo.TodoItem) (int, error
 
 	return s.repo.Create(id, item)
 }
+
+func (s *TodoItemServise) GetAll(userId, id int) ([]todo.TodoItem, error) {
+	return s.repo.GetAll(userId, id)
+}
